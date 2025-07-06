@@ -39,6 +39,7 @@ jobs:
         echo "printing value of image ${{matrix.images}}"
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     timeout-minutes: 1
     needs: build
     concurrency: 
